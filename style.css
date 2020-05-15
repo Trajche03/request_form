@@ -1,0 +1,120 @@
+#slika-logo{
+    width: 250px;
+    height: auto;
+}
+/* Style for the form. both section inside */
+.top-page form fieldset{
+    padding: 30px 50px;
+    margin-bottom: 30px;
+}  
+fieldset.top-page-holder {
+    background-image: url("./images/background2.jpg");
+    background-position-y: 0px;
+    background-position-x: -90px;
+    background-size: cover;
+}
+fieldset.bottom-billing {
+    background-image: url("./images/background2.jpg");
+    background-position-y: 103%;
+    background-position-x: -90px;
+    background-size: cover;
+}
+input.form-control, select.form-control {
+    border: none;
+    border-bottom: 1px solid #0F0538;
+    background: none;
+    transition: border 0.2s ease-in-out;
+    color: #0F0538;
+    transition: outline 0.6s linear;
+    
+}
+input.form-control:focus , input.form-control:hover, input.form-control:active {
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+    border-bottom: 1px solid  #42ACCD;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color :#42ACCD;
+}
+select.form-control:hover, select.form-control:focus, select.form-control:active {
+    outline:0px !important;
+    box-shadow: none !important;
+}
+input.form-control::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder  { 
+    color: #eaeaea;
+    opacity: 1; 
+}
+input.input-group.date { 
+    position: relative;
+}
+span.input-group-addon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index: 99999;
+}
+.icon{
+    color: #42ACCD;
+}
+.submit{
+    background-color: #F6D550;
+    color: white;
+    padding: 5px;
+    margin-top: 10px;
+}
+.tittle-requesting-boot{
+    background-color: #42ACCD;
+    padding: 15px;
+    margin: 15px 0px;
+    
+}
+div.form-group { 
+    margin-bottom: 30px !important;
+}
+div.mailbox { 
+    margin-top: 30px;
+}
+.tittle-billing {
+    padding: 20px;
+}
+.btn.btn-default.active.toggle-off {
+    background-color: #0F0538;
+    color: white;
+}
+.btn.btn-primary.toggle-on {
+    background-color: #42ACCD !important;
+}
+/* Style for orders part */
+.my-orders-list{
+    display: inline-flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0 !important;
+}
+.my-orders-list li { 
+    margin-bottom: 20px; 
+}
+.my-orders-list li .card .card-body {
+    background-color: #EDF6FB; 
+    overflow-y: scroll;
+}
+.card { height: 400px;
+    max-height: 400px;
+    overflow-y: hidden;
+}
+.card-body::-webkit-scrollbar { 
+    background-color:  rgb(186, 215, 231); width: 5px;
+}
+span.card-text { 
+    display: block !important;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .d-flex {
+      display: block !important;
+    }
+    .billing-info-box div.form-group { margin-bottom: 20px !important;}
+}

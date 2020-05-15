@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker-standalone.css"> 
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Request Boot</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="logo-class d-flex m5"> 
+            <div class="logo-img w-50">
+                <img src="./images/logo_.png" id="slika-logo"  >
+            </div>
+        </div>
+        
+        <hr>
+        <div class="top-page ">
+            <div class="tittle-requesting-boot text-center">
+                <span>REQUESTING BOOT</span>
+            </div>
+            <form id="bot_form">
+                
+                <fieldset class="top-page-holder">
+                    <div class="top-holder d-flex ">
+                        <div class="left-page col-lg-6 col-md-6 col-sm-12">
+
+                            
+                            <div class="company-name form-group">
+                                <input type="text" id="company_name" placeholder="Comapny Name *" class="form-control" name="company_name" required  ">
+                            </div>
+
+                            <div class="phone-number form-group">
+                                <input type="text" id="phone" name="phone" maxlength="14" class="form-control" placeholder="Phone"  >
+                            </div>
+
+                            <div class="web-site form-group">
+                                <input type="text" id="web-site" class="form-control" name="web-site" placeholder="Website">
+                            </div>
+
+                        </div>
+                        <div class="right-page col-lg-6 col-md-6 col-sm-12">
+                            <div class="bot-name form-group">
+                                <input type="text" id="bot-name" class="form-control" placeholder="Bot Name" name="bot-name" >
+                            </div>
+                            <div class="bot-time-zone form-group">
+                                <select  id="bot-time-zone" class="form-control" id="us_timezones"name="bot-time-zone">
+                                   
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="datetimepicker1">Desired delivery date </label>
+                                <div class='input-group date' id='datetimepicker1'>
+                                  
+                                  <input type='text' class="form-control" id="desired-delivery-date" />
+                                  <span class="input-group-addon">
+                                    <i class="far fa-calendar-alt" class="icon"></i>
+                                  </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toogle-holder col-lg-12 col-md-12 col-sm-12">
+                        <div class="toogle-box">
+
+                            <div class="toogle1">
+                                <label>
+                                <input class="form-control" type="checkbox" data-toggle="toggle" id="send_sms">
+                                Do you want your boot to send sms ?
+                                </label>
+                            </div>
+                            <div class="toogle2">
+                            
+                                <label>
+                                <input type="checkbox"  class="form-control" data-toggle="toggle" id="send_email">
+                                Do you want your boot to send e-mail ?
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mailbox form-group">
+                            <input multiple type="email" class="form-control" id="multiple_email" placeholder="Lead Delivery Email" multiple>
+                        </div>
+                    </div>
+                    <div id="status"></div>
+                </fieldset>
+                <fieldset class="bottom-billing">
+                    <div class="billing-holder">
+                        <div class="tittle-billing">BILLING INFO </div>
+                        <div class="billing-box text-center">
+                            <div class="billing-info-box d-flex p5">
+                                <div class=" col-lg-4 col-md-4 col-sm-12  billing-address form-group">
+                                    <input type="text" id="billing-addres" class="form-control" placeholder="Billing address" name="billing-addres" >
+                                </div>
+                                <div class=" col-lg-4 col-md-4 col-sm-12 billing-contact mb-0 form-group">
+                                    <input type="text" id="billing-contact" placeholder="Billing contact" class="form-control" name="billing-contact">
+                                </div>
+                                <div class=" col-lg-4 col-md-4 col-sm-12 billing-email form-group">
+                                    <input type="email" id="billing-email"  class="form-control" name="billing-email" placeholder="Billing e-mail"
+                                    size="30"><br>
+                                </div>
+                            </div>
+                            <input type="submit" class="submit">
+                        </div>
+                    </div>
+                    <hr>
+                </fieldset>
+            </form>
+            
+        </div><!--End of top box with form for reguest bot-->
+    
+        
+        <div class="orders container">
+            <div class="order-holders ">
+            
+                <div class="title-order  p-4 text-center">
+                   <h4>Orders</h4>
+                   <p>All your orders are here</p>
+                </div>
+
+                <div class="my-orders-holder text-center ">
+                    <ul class="my-orders-list w-100" id="order-box"> 
+                        <li class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="card" >
+                                <div class="card-header">
+                                Amazon
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-text" id="order-phone">(388) 654-6549</span>
+                                    <span class="card-text" id="order-comapny-side">http://amazon.com</span>
+                                    <span class="card-text" id="order-bot-name">Mike Menson</span>
+                                    <span class="card-text" id="order-bot-time-zone">Manchester/USA (GMD -4)</span>
+                                    <span class="card-text" id="order-delivery-date">12/15/2020</span>
+                                    <span class="card-text" id="order-send-sms">YES</span>
+                                    <span class="card-text" id="order-send-email">NO</span>
+                                    <span class="card-text" id="order-lead-email">amazon.support@amazon.com</span>
+                                    <span class="card-text" id="order-billing-address">Vermont 4 west str</span>
+                                    <span class="card-text" id="order-billing-contact">Mike Menson</span>
+                                    <span class="card-text" id="order-billing-email">mike-menson@yahoo.com</span>
+                                    <span class="card-text" id="order-delivery-date">12/15/2020</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="card" >
+                                <div class="card-header">
+                                    Draxlmaier
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-text" id="order-phone">(388) 654-6549</span>
+                                    <span class="card-text" id="order-comapny-side">http://amazon.com</span>
+                                    <span class="card-text" id="order-bot-name">Mike Menson</span>
+                                    <span class="card-text" id="order-bot-time-zone">Manchester/USA (GMD -4)</span>
+                                    <span class="card-text" id="order-delivery-date">12/15/2020</span>
+                                    <span class="card-text" id="order-send-sms">YES</span>
+                                    <span class="card-text" id="order-send-email">NO</span>
+                                    <span class="card-text" id="order-lead-email">amazon.support@amazon.com</span>
+                                    <span class="card-text" id="order-billing-address">Vermont 4 west str</span>
+                                    <span class="card-text" id="order-billing-contact">Mike Menson</span>
+                                    <span class="card-text" id="order-billing-email">mike-menson@yahoo.com</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                Best Buy
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-text" id="order-phone">(388) 654-6549</span>
+                                    <span class="card-text" id="order-comapny-side">http://amazon.com</span>
+                                    <span class="card-text" id="order-bot-name">Mike Menson</span>
+                                    <span class="card-text" id="order-bot-time-zone">Manchester/USA (GMD -4)</span>
+                                    <span class="card-text" id="order-delivery-date">12/15/2020</span>
+                                    <span class="card-text" id="order-send-sms">YES</span>
+                                    <span class="card-text" id="order-send-email">NO</span>
+                                    <span class="card-text" id="order-lead-email">amazon.support@amazon.com</span>
+                                    <span class="card-text" id="order-billing-address">Vermont 4 west str</span>
+                                    <span class="card-text" id="order-billing-contact">Mike Menson</span>
+                                    <span class="card-text" id="order-billing-email">mike-menson@yahoo.com</span>
+                                    <span class="card-text" id="order-phone">(388) 654-6549</span>
+                                    <span class="card-text" id="order-comapny-side">http://amazon.com</span>
+                                    <span class="card-text" id="order-bot-name">Mike Menson</span>
+                                    <span class="card-text" id="order-bot-time-zone">Manchester/USA (GMD -4)</span>
+                                    <span class="card-text" id="order-delivery-date">12/15/2020</span>
+                                    <span class="card-text" id="order-send-sms">YES</span>
+                                    <span class="card-text" id="order-send-email">NO</span>
+                                    <span class="card-text" id="order-lead-email">amazon.support@amazon.com</span>
+                                    <span class="card-text" id="order-billing-address">Vermont 4 west str</span>
+                                    <span class="card-text" id="order-billing-contact">Mike Menson</span>
+                                    <span class="card-text" id="order-billing-email">mike-menson@yahoo.com</span>
+                                    <span class="card-text" id="order-delivery-date">12/15/2020</span>
+                                </div>
+                            </div>
+                        </li>
+                   
+                        <li class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                Best Buy
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-text" id="order-phone">(388) 654-6549</span>
+                                    <span class="card-text" id="order-comapny-side">http://amazon.com</span>
+                                    <span class="card-text" id="order-bot-name">Mike Menson</span>
+                                    <span class="card-text" id="order-bot-time-zone">Manchester/USA (GMD -4)</span>
+                                    <span class="card-text" id="order-delivery-date">12/15/2020</span>
+                                    <span class="card-text" id="order-send-sms">YES</span>
+                                    <span class="card-text" id="order-send-email">NO</span>
+                                    <span class="card-text" id="order-lead-email">amazon.support@amazon.com</span>
+                                    <span class="card-text" id="order-billing-address">Vermont 4 west str</span>
+                                    <span class="card-text" id="order-billing-contact">Mike Menson</span>
+                                    <span class="card-text" id="order-billing-email">mike-menson@yahoo.com</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./plugins/moment/moment.min.js"></script>
+<script src="./plugins/moment/moment-timezone-with-data.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="./bot.js"></script>
+    
